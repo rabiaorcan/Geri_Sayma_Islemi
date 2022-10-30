@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geri Sayım</title>
+<style>
+.normal{
+    font-size: 40px;
+}
+.boyut
+{
+    font-size: 80px;
+}
+body{
+    background-color: blueviolet;
+}
+</style>
+</head>
+<body>
+<p class="normal" id="sayac"></p>
+
+
+   <script>
+    var dakika=1;
+    var saniye=10;
+    var sure=setInterval(function()
+    {
+        dakikagoster=dakika;
+        saniyegoster=saniye;
+        if(dakika==0)
+        {
+            dakikagoster="0"+ dakika;
+            
+        }
+        if(saniye==0)
+        {
+            saniyegoster="0" + saniye;
+        }
+        yazdir=document.getElementById("sayac");
+        
+        yazdir.innerHTML= dakikagoster + ":" + saniyegoster;
+
+
+        saniye--;
+        if(saniye==0)
+        {
+            saniye=59;
+            yazdir.classList.add("boyut");
+            if(dakika==0)
+            {
+                clearInterval(sure);
+                window.location="http://google.com"
+            }
+            dakika--;
+        }
+       
+
+    },1000);
+
+   </script> 
+</body>
+</html>
